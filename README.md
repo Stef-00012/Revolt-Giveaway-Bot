@@ -16,6 +16,9 @@ npm i
 
 <h4>• fill in the token and mongo uri in the `config.js`</h4>
 
+token: your bot's token
+uri: your MongoDB url
+
 <h4>• start the bot</h4>
 
 ```bash
