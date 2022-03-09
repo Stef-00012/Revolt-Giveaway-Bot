@@ -4,13 +4,13 @@
 <h2>Download</h2>
 <h4>Clone the repository</h4>
 
-```js
+```bash
 git clone https://github.com/Stef-00012/Revolt-Giveaway-Bot.git
 ```
 
 <h4>install the required modules</h4>
 
-```js
+```bash
 npm i
 ```
 
@@ -18,10 +18,10 @@ npm i
 
 <h4>start the bot</h4>
 
-```js
+```bash
 npm start
 ```
 or
-```js
+```bash
 node --experimental-specifier-resolution=node index.js
 ```
