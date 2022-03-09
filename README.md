@@ -31,7 +31,8 @@ node --experimental-specifier-resolution=node index.js
 ```
 
 <h2>Commands</h2>
+
 Command | Category | Description
 ------- | -------- | -----------
-Help | Misc | Gives informations about the commands
-a | v | c
+Help    | Misc     | Gives informations about the commands
+a       | v        | c
