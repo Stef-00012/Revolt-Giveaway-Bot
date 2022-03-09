@@ -2,7 +2,7 @@ import { Badges } from '../data/flags/Badges.js'
 
 export const event = {
   run: async function(client, message) {
-    if (message.author.bot) return;
+    if (message.author.bot || message.channel.channel_type !== 'TextChannel') return;
     if (message.content.includes('<@01FXJ841GYXKZSQB0Q9T78D6WC>')) message.channel.sendMessage(`Hi <@${message.author_id}>! my prefix here is \`${client.config.bot.prefix}\``)
     try {
     message.member.setNickname = client.mFunctions.setNickname
