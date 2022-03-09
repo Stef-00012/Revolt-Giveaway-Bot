@@ -1,5 +1,5 @@
 export const event = {
   run: async function(client) {
-    console.log('online!')
+    console.log(`Successfully logged in as ${client.user.username}!`)
   }
 }
