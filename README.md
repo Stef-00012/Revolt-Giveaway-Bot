@@ -4,24 +4,24 @@
 <h5>Download</h5>
 Clone the repository
 
-```bash
+```js
 git clone https://github.com/Stef-00012/Revolt-Giveaway-Bot.git
 ```
 
 install the required modules
 
-```bash
-npm i`
+```js
+npm i
 ```
 
 fill in the token and mongo uri in the `config.js`
 
 start the bot
 
-```bash
+```js
 npm start
 ```
 or
-```bash
+```js
 node --experimental-specifier-resolution=node index.js
 ```
