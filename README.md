@@ -32,7 +32,7 @@ node --experimental-specifier-resolution=node index.js
 
 <h2>Commands</h2>
 
-Command | Category | Description
-------- | -------- | -----------
-Help    | Misc     | Gives informations about the commands
-a       | v        | c
+Command | Description
+------- | -----------
+Help    | Gives informations about the commands
+a       | c
