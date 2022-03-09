@@ -1,7 +1,8 @@
 export const config = {
   bot: {
     token: '<TOKEN>',
-    prefix: '.'
+    prefix: '.',
+    ownerId: '<OWNER_ID>'
   },
   mongo: {
     uri: '<MONGO_URI>'
