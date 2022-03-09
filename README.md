@@ -2,21 +2,21 @@
 <h1 align="center">Giveaway Bot</h1>
 
 <h2>Download</h2>
-<h4>Clone the repository</h4>
+<h4>* Clone the repository</h4>
 
 ```bash
 git clone https://github.com/Stef-00012/Revolt-Giveaway-Bot.git
 ```
 
-<h4>install the required modules</h4>
+<h4>* install the required modules</h4>
 
 ```bash
 npm i
 ```
 
-<h4>fill in the token and mongo uri in the `config.js`</h4>
+<h4>* fill in the token and mongo uri in the `config.js`</h4>
 
-<h4>start the bot</h4>
+<h4>* start the bot</h4>
 
 ```bash
 npm start
