@@ -35,4 +35,10 @@ node --experimental-specifier-resolution=node index.js
 Command | Description
 ------- | -----------
 Help    | Gives informations about the commands
-a       | c
+Gcreate | Creates a giveaway
+Gdelete | Deletes specified giveaeay
+Gedit   | Edits specified giveaway's time or winners
+Gend    | Ends specified giveaway
+Ginfo   | Fives informations about specified giveaway
+Gjoin   | Lets the user join specified giveaway
+Eval    | Runs given code (owner only)
