@@ -65,7 +65,7 @@ export const event = {
   
   const cmd = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
   if (!cmd) return
-  if (cmd.ownerOnly && message.author_id !== '01FEY7JBN0B1VG5D98BEBAE7KA') return message.channel.sendMessage('$\\color{#de4143}\\textsf{you tried}$')
+  if (cmd.ownerOnly && message.author_id !== client.config.bot.ownerId) return message.channel.sendMessage('$\\color{#de4143}\\textsf{you tried}$')
   cmd.run(client, message, args);
   }
 }
