@@ -14,7 +14,7 @@ git clone https://github.com/Stef-00012/Revolt-Giveaway-Bot.git
 npm i
 ```
 
-<h4>• fill in the token and mongo uri in the `config.js`</h4>
+<h4>• fill in the token and mongo uri in the <code>config.js>/code></h4>
 
 Token: your bot's token
 
