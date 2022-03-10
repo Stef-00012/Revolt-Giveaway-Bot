@@ -2,6 +2,8 @@ import { Client } from 'revolt.js'
 import fs from 'fs'
 import mongoose from 'mongoose'
 import { Collection } from 'discord.js'
+import { promisify } from 'util'
+import glob2 from 'glob'
 import { functions } from './functions/function.js'
 import { memberFunctions } from './functions/member.js'
 import { serverFunctions } from './functions/server.js'
@@ -13,6 +15,8 @@ import { getAutumnURL, hasPerm, hasPermForChannel, getOwnMemberInServer, isModer
 import { checkGiveaways } from './functions/checkGiveaways.js'
 import { gaw } from './DB/schemas/gaw.js'
 import { config } from './config.js'
+
+const glob = promisify(glob2)
 
 export const client = new Client()
 
@@ -47,22 +51,22 @@ client.sFunctions = serverFunctions
 client.rFunctions = roleFunctions
 client.cFunctions = channelFunctions
 
-fs.readdirSync('./commands').forEach(async (dirs) => {
-  const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
+const commands = await glob(`${process.cwd()}/commands/**/*.js`)
   
-  for (const file of commands) {
-    const command = await import(`./commands/${dirs}/${file}`)
-    console.log(`\x1b[35m[COMMANDS] \x1b[0mLoaded ${command.command.name}`)
-    client.commands.set(command.command.name.toLowerCase(), command.command)
-  }
-})
+for (const file of commands) {
+  const command = await import(file)
+  console.log(`\x1b[35m[COMMANDS] \x1b[0mLoaded ${command.command.name}`)
+  client.commands.set(command.command.name.toLowerCase(), command.command)
+}
 
-const events = fs.readdirSync('./events').filter(files => files.endsWith('.js'))
+
+const events = await glob(`${process.cwd()}/events/*.js`)
 
 for (const file of events) {
-  const event = await import(`./events/${file}`)
-  console.log(`\x1b[34m[EVENTS] \x1b[0mLoaded ${file.split('.')[0]}`)
-  client.on(file.split('.')[0], event.event.run.bind(null, client))
+  const event = await import(file)
+  const name = file.replace(`${process.cwd()}/events/`).replace('undefined', '')
+  console.log(`\x1b[34m[EVENTS] \x1b[0mLoaded ${name.split('.')[0]}`)
+  client.on(name.split('.')[0], event.event.run.bind(null, client))
 }
 
 client.loginBot(client.config.bot.token)
